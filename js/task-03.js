@@ -13,17 +13,27 @@ const images = [
   },
 ];
 
-for (const image of images) {
-  const imgEl = document.querySelector('.gallery');
-  imgEl.insertAdjacentHTML("afterbegin",
-    `<li><img src="${image.url} alt="${image.alt}"></li>`
-  );
-  
-  imgEl.style.cssText = 'display: flex; flex-wrap: wrap; list-style: none; gap: 50px'
-  const photoEl = document.querySelector('img');
-  photoEl.style.cssText = 'width: 500px'
+const imgEl = document.querySelector('.gallery');
+const elements = images.map((image) => `<li><img src="${image.url} alt="${image.alt} width=500px"></li>`);
 
-  console.log(imgEl)
-};
+imgEl.insertAdjacentHTML('beforeend', elements);
+
+imgEl.style.cssText = `display: flex; flex-wrap: wrap; list-style: none; gap: 50px`;
+
+
+console.log(imgEl)
+
+// for (const image of images) {
+//   const imgEl = document.querySelector('.gallery');
+//   imgEl.insertAdjacentHTML("afterbegin",
+//     `<li><img src="${image.url} alt="${image.alt}"></li>`
+//   );
+  
+//   imgEl.style.cssText = 'display: flex; flex-wrap: wrap; list-style: none; gap: 50px'
+//   const photoEl = document.querySelector('img');
+//   photoEl.style.cssText = 'width: 500px'
+
+//   console.log(imgEl)
+// };
 
 

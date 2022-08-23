@@ -8,17 +8,24 @@ const ingredients = [
 ];
 const ulEl = document.querySelector('ul');
 
-const elem = [];
 
-for (let i = 0; i < ingredients.length; i++) {
-  const ingr = ingredients[i];
+const elem = ingredients.map(ingr => {  
   const liEl = document.createElement('li');
   liEl.textContent = ingr;
-  liEl.classList.add('item')
+  liEl.classList.add('item');
+  return liEl;
+})
 
-  elem.push(liEl);
+// const elem = [];
+// for (let i = 0; i < ingredients.length; i++) {
+//   const ingr = ingredients[i];
+//   const liEl = document.createElement('li');
+//   liEl.textContent = ingr;
+//   liEl.classList.add('item')
 
-}
+//   elem.push(liEl);
+
+// }
 
 ulEl.append(...elem)
 
